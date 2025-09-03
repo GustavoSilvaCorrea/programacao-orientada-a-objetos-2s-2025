@@ -1,16 +1,22 @@
 public class Radar {
-    public Integer limiteVelocidade;
-    public String modelo;
-    public String posicao;
+    private Integer limiteVelocidade;
+    private String modelo;
+    private String posicao;
+
+    public Radar(String modelo, Integer limiteVelocidade, String posicao){
+        this.modelo = modelo;
+        this.limiteVelocidade = limiteVelocidade;
+        this.posicao = posicao;
+    } // Método Construtor, assegura a inserção das informação.
 
     public void emitirNotificacao(String placa, Integer velocidadeAvaliada){
         System.out.println("Limite de Velocidade: " + this.limiteVelocidade + 
-        " Velocidade Avaliada: " + velocidadeAvaliada + " Placa: " + placa);  
+        "\nVelocidade Avaliada: " + velocidadeAvaliada + "\nPlaca: " + placa);  
     }
 
     public void avaliarVelocidade(Carro c){
-        if (c.velocidade > this.limiteVelocidade) {
-            emitirNotificacao(c.placa, c.velocidade);    
+        if (c.getVelocidade() > this.limiteVelocidade) {
+            emitirNotificacao(c.getPlaca(), c.getVelocidade());    
         }
     }
 }
