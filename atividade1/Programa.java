@@ -1,16 +1,18 @@
 package atividade1;
 
 public class Programa {
+    private String nome;
     private Integer memoriaRamAlocada;
     private Integer SSDOcupado;
     private Integer nucleosP;
     private Integer quantidadeOperacoes;
-
-    public Programa(Integer memoriaRamAlocada, Integer SSDOcupado, Integer nucleos, Integer quantidadeOperacoes){
+    
+    public Programa(Integer memoriaRamAlocada, Integer SSDOcupado, Integer nucleos, Integer quantidadeOperacoes, String nome){
         this.memoriaRamAlocada = memoriaRamAlocada;
         this.SSDOcupado = SSDOcupado;
         this.nucleosP = nucleos;
         this.quantidadeOperacoes = quantidadeOperacoes;
+        this.nome = nome;
     }
 
     public Integer getMemoriaRamAlocada() {
@@ -44,4 +46,14 @@ public class Programa {
     public void setQuantidadeOperacoes(Integer quantidadeOperacoes) {
         this.quantidadeOperacoes = quantidadeOperacoes;
     }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
 }
