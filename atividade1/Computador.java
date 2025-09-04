@@ -33,10 +33,6 @@ public class Computador {
         return this.nucleos;
     }
 
-    public void setNucleos(Integer nucleos) {
-        this.nucleos = nucleos;
-    }
-
     public float getOperacoesPorSegundo() {
         return this.operacoesPorSegundo;
     }
