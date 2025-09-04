@@ -34,4 +34,12 @@ public class Carro {
             this.velocidade -= 5;
         }
     }
+
+    public Integer getAno() {
+        return ano;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
 }
