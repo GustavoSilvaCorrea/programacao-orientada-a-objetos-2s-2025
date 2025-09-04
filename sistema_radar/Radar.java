@@ -19,4 +19,12 @@ public class Radar {
             emitirNotificacao(c.getPlaca(), c.getVelocidade());    
         }
     }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getPosicao() {
+        return posicao;
+    }
 }
