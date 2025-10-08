@@ -10,10 +10,14 @@ class Usuario extends Pessoa {
         return this.matricula;
     }
 
+    public void setMatricula(Integer matricula) {
+        this.matricula = matricula;
+    }
+
     @Override
     public void exibirInfo() {
-        System.out.println("Nome: " + getNome() +
-                "\t Email: " + getEmail() +
-                "\t Matrícula: " + getMatricula());
+        System.out.println("Nome: " + this.getNome() +
+                "\t Email: " + this.getEmail() +
+                "\t Matrícula: " + this.getMatricula());
     }
 }

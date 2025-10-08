@@ -10,10 +10,14 @@ class Funcionario extends Pessoa {
         return this.cargo;
     }
 
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     @Override
     public void exibirInfo() {
-        System.out.println("Nome: " + getNome() +
-                "\t Email: " + getEmail() +
-                "\t Matrícula: " + getCargo());
+        System.out.println("Nome: " + this.getNome() +
+                "\t Email: " + this.getEmail() +
+                "\t Cargo: " + this.getCargo());
     }
 }

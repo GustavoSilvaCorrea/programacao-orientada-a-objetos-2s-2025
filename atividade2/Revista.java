@@ -12,8 +12,8 @@ class Revista extends Material {
 
     @Override
     public void descricao() {
-        System.out.println("Nome: " + getTitulo() +
-                "\t Email: " + getAnoPublicacao() +
-                "\t Matrícula: " + getEdicao());
+        System.out.println("Titulo: " + this.getTitulo() +
+                "\t Ano de  Publicacao: " + this.getAnoPublicacao() +
+                "\t Edicao: " + this.getEdicao());
     }
 }

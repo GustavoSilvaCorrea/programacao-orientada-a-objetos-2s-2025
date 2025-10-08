@@ -45,9 +45,8 @@ public class Emprestimo {
 
     public void exibirDetalhes() {
         System.out.println("=== Detalhes do Empréstimo ===");
-        pessoa.exibirInfo();
-        material.descricao();
-        System.out.println("Data Empréstimo: " + dataEmprestimo + " | Data Devolução: " + dataDevolucao);
-
+        this.pessoa.exibirInfo();
+        this.material.descricao();
+        System.out.println("Data Empréstimo: " + this.dataEmprestimo + " | Data Devolução: " + this.dataDevolucao);
     }
 }
