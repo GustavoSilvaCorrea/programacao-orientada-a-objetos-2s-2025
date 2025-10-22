@@ -11,6 +11,14 @@ public class Main {
 
         int opcao;
 
+        // Exemplo Fixo.
+        Usuario u1 = new Usuario("Joao", "Joao@gmail.com", 123);
+        Instituicao i1 = new Instituicao("UCB", "123456", "Brasilia");
+        Livro l1 = new Livro("Livro1", 2025, "Joao");
+        Colecao c1 = new Colecao("Joao", 5);
+        Emprestimo e1 = new Emprestimo(i1, c1, "22/10/2025", "23/10/2025");
+        emprestimos.add(e1);
+
         do {
             System.out.println("===== SISTEMA DE BIBLIOTECA =====");
             System.out.println("1 - Cadastrar Usuário");

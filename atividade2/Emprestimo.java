@@ -1,34 +1,35 @@
 public class Emprestimo {
-    private Pessoa pessoa;
-    private Material material;
+    private TomadorEmprestimo tomadorEmprestimo;
+    private ItemEmprestavel itemEmprestavel;
     private String dataEmprestimo;
     private String dataDevolucao;
 
-    public Emprestimo(Pessoa pessoa, Material material, String dataEmprestimo, String dataDevolucao) {
-        this.pessoa = pessoa;
-        this.material = material;
+    public Emprestimo(TomadorEmprestimo tomadorEmprestimo, ItemEmprestavel itemEmprestavel, String dataEmprestimo,
+            String dataDevolucao) {
+        this.tomadorEmprestimo = tomadorEmprestimo;
+        this.itemEmprestavel = itemEmprestavel;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Pessoa getPessoa() {
-        return pessoa;
+    public TomadorEmprestimo getTomadorEmprestimo() {
+        return this.tomadorEmprestimo;
     }
 
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
+    public void setTomadorEmprestimo(TomadorEmprestimo tomadorEmprestimo) {
+        this.tomadorEmprestimo = tomadorEmprestimo;
     }
 
-    public Material getMaterial() {
-        return material;
+    public ItemEmprestavel getItemEmprestavel() {
+        return this.itemEmprestavel;
     }
 
-    public void setMaterial(Material material) {
-        this.material = material;
+    public void setItemEmprestavel(ItemEmprestavel itemEmprestavel) {
+        this.itemEmprestavel = itemEmprestavel;
     }
 
     public String getDataEmprestimo() {
-        return dataEmprestimo;
+        return this.dataEmprestimo;
     }
 
     public void setDataEmprestimo(String dataEmprestimo) {
@@ -36,7 +37,7 @@ public class Emprestimo {
     }
 
     public String getDataDevolucao() {
-        return dataDevolucao;
+        return this.dataDevolucao;
     }
 
     public void setDataDevolucao(String dataDevolucao) {
@@ -45,8 +46,9 @@ public class Emprestimo {
 
     public void exibirDetalhes() {
         System.out.println("=== Detalhes do Empréstimo ===");
-        this.pessoa.exibirInfo();
-        this.material.descricao();
+        System.out.println("Tomador de Emprestimo:");
+        this.tomadorEmprestimo.exibirInfo();
+        this.itemEmprestavel.descricao();
         System.out.println("Data Empréstimo: " + this.dataEmprestimo + " | Data Devolução: " + this.dataDevolucao);
     }
 }
