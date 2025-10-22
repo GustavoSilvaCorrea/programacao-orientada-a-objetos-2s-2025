@@ -36,7 +36,7 @@ public class Instituicao implements TomadorEmprestimo{
     @Override
     public void exibirInfo(){
         System.out.println("Nome: " + this.nome);
-        System.out.println("CNPJ: " + this.nome);
-        System.out.println("Cidade: " + this.nome);
+        System.out.println("CNPJ: " + this.cnpj);
+        System.out.println("Cidade: " + this.cidade);
     }
 }
