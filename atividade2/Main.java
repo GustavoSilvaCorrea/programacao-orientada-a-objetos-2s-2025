@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,11 +13,10 @@ public class Main {
         int opcao;
 
         // Exemplo Fixo.
-        Usuario u1 = new Usuario("Joao", "Joao@gmail.com", 123);
         Instituicao i1 = new Instituicao("UCB", "123456", "Brasilia");
         Livro l1 = new Livro("Livro1", 2025, "Joao");
         Colecao c1 = new Colecao("Joao", 5);
-        Emprestimo e1 = new Emprestimo(i1, c1, "22/10/2025", "23/10/2025");
+        Emprestimo e1 = new Emprestimo(i1, l1, "22/10/2025", "23/10/2025");
         emprestimos.add(e1);
 
         do {
@@ -43,8 +43,16 @@ public class Main {
                     System.out.print("Matrícula: ");
                     int matricula = sc.nextInt();
                     sc.nextLine();
-                    pessoas.add(new Usuario(nomeU, emailU, matricula));
-                    System.out.println("Usuário cadastrado com sucesso!\n");
+                    try {
+                        pessoas.add(new Usuario(nomeU, emailU, matricula));
+                        System.out.println("Usuário cadastrado com sucesso!\n");
+                    } catch (Exception NomeInvalidoException) {
+                        System.out.println("ad");
+                    } catch (Exception EmailInvalidoException) {
+                        System.out.println("ada");
+                    } catch (Exception NomeInvalidoException) {
+                        System.out.println(NomeInvalidoException);
+                    }
                     break;
 
                 case 2:
@@ -103,6 +111,7 @@ public class Main {
                         System.out.println("É necessário ter pelo menos uma pessoa e um material cadastrados.\n");
                         break;
                     }
+
                     System.out.println("Escolha o usuário (índice):");
                     for (int i = 0; i < pessoas.size(); i++) {
                         System.out.println(i + " - " + pessoas.get(i).getNome());
@@ -122,10 +131,14 @@ public class Main {
                     System.out.print("Data de devolução: ");
                     String dataD = sc.nextLine();
 
-                    emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
-                            materiais.get(idxMaterial),
-                            dataE, dataD));
-                    System.out.println("Empréstimo cadastrado!\n");
+                    try {
+                        emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
+                                materiais.get(idxMaterial),
+                                dataE, dataD));
+                        System.out.println("Empréstimo cadastrado!\n");
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("Algo deu errado. Erro: " + e.getMessage());
+                    }
                     break;
 
                 case 8:
