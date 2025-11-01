@@ -46,12 +46,12 @@ public class Main {
                     try {
                         pessoas.add(new Usuario(nomeU, emailU, matricula));
                         System.out.println("Usuário cadastrado com sucesso!\n");
-                    } catch (Exception NomeInvalidoException) {
-                        System.out.println("ad");
-                    } catch (Exception EmailInvalidoException) {
-                        System.out.println("ada");
-                    } catch (Exception NomeInvalidoException) {
-                        System.out.println(NomeInvalidoException);
+                    } catch (NomeInvalidoException e) {
+                        System.out.println(e.getMessage());
+                    } catch (EmailInvalidoException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) { 
+                        System.out.println("Erro desconhecido: " + e.getMessage());
                     }
                     break;
 
