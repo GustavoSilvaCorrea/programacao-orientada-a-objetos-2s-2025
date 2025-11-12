@@ -1,3 +1,7 @@
+package model;
+
+import interfaces.ItemEmprestavel;
+
 public class Colecao implements ItemEmprestavel{
     private String propietario;
     private Integer quantidadeItens;

@@ -1,4 +1,6 @@
-class Revista extends Material {
+package model;
+
+public class Revista extends Material {
     private Integer edicao;
 
     public Revista(String titulo, Integer anoPublicacao, Integer edicao) {

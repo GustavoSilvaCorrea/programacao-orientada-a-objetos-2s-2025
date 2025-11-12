@@ -1,5 +1,14 @@
-class Funcionario extends Pessoa {
+package model;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Funcionario")
+public class Funcionario extends Pessoa {
     private String cargo;
+
+    protected Funcionario(){}
 
     public Funcionario(String nome, String email, String cargo) {
         super(nome, email);

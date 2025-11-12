@@ -1,4 +1,6 @@
-class Livro extends Material {
+package model;
+
+public class Livro extends Material {
     private String autor;
 
     public Livro(String titulo, Integer anoPublicacao, String autor) {
